@@ -1,0 +1,8 @@
+{ "name": "aqua-quest", "private": true,
+  "scripts": {
+    "install:all": "npm i --prefix server && npm i --prefix client --include=dev",
+    "seed": "npm run seed --prefix server",
+    "dev": "concurrently -n api,web -c cyan,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run install:all && npm run build --prefix client",
+    "start": "npm start --prefix server" },
+  "devDependencies": { "concurrently": "^8.2.2" } }
